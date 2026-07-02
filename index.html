@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Agam Alon — Software Developer</title>
+<meta name="description" content="Agam Alon — Computer Science & Mathematics student and software developer in Tel Aviv. AI products, full-stack, automation, and machine learning." />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238C3D5D'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='19' font-style='italic' fill='%23FBF2F6' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Agam Alon — Computer Science & Mathematics student and software developer in Tel Aviv. Full-stack products, automation, and machine learning." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,8 +14,8 @@
   --bg:#FBF2F6; --bg2:#F6E7EE; --card:#FFFFFF;
   --ink:#251B21; --ink2:#5A4A52; --muted:#93808A;
   --rose:#B85C7E; --rose-deep:#8C3D5D; --rose-tint:#F6DEE8; --line:#EAD7E0;
-  --shadow:0 26px 60px -30px rgba(110,40,70,.42);
-  --shadow-sm:0 12px 30px -18px rgba(110,40,70,.30);
+  --shadow:0 30px 70px -32px rgba(110,40,70,.46);
+  --shadow-sm:0 14px 34px -20px rgba(110,40,70,.32);
   --max:1180px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -25,34 +25,42 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--ink);font-weight:500;l
 a{color:inherit;text-decoration:none}
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 32px}
 .mono{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-deep);font-weight:500}
-.sec{padding:120px 0}
+.sec{padding:118px 0;position:relative}
 .sec-label{display:flex;align-items:center;gap:14px;margin-bottom:34px}
 .sec-label .mono{color:var(--muted)}
 .sec-label .bar{flex:1;height:1px;background:var(--line)}
 
+/* fixed decorative layers */
+.grain{position:fixed;inset:0;z-index:6;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cursor-glow{position:fixed;top:0;left:0;width:440px;height:440px;margin:-220px 0 0 -220px;border-radius:50%;pointer-events:none;z-index:4;background:radial-gradient(circle,rgba(184,92,126,.16),transparent 62%);transition:opacity .3s;will-change:transform}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--rose-deep),var(--rose));z-index:70;transition:width .08s linear}
+
 /* NAV */
 header{position:fixed;top:0;left:0;right:0;z-index:60;transition:.35s}
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
-.brand{font-family:'Fraunces';font-weight:600;font-size:21px;color:var(--ink);letter-spacing:-.01em}
+.brand{font-family:'Fraunces';font-weight:600;font-size:21px;color:var(--ink)}
 .brand em{font-style:normal;color:var(--rose)}
 .nav-right{display:flex;align-items:center;gap:36px}
 .nav-links{display:flex;gap:32px}
 .nav-links a{font-size:14px;font-weight:500;color:var(--ink);position:relative}
 .nav-links a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:var(--rose);transition:.3s}
-.nav-links a:hover::after{width:100%}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a.active{color:var(--rose-deep)}
 .avail{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono';font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
 .avail .d{width:8px;height:8px;border-radius:50%;background:#3FB27F;box-shadow:0 0 0 0 rgba(63,178,127,.5);animation:pulse 2.4s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,178,127,.5)}70%{box-shadow:0 0 0 7px rgba(63,178,127,0)}100%{box-shadow:0 0 0 0 rgba(63,178,127,0)}}
 header.scrolled{background:rgba(251,242,246,.85);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
-.burger span{width:25px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+.burger span{width:25px;height:2px;background:var(--ink);border-radius:2px}
 
 /* HERO */
-.hero{padding:172px 0 96px}
-.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+.hero{padding:172px 0 84px;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,72%) var(--my,28%),rgba(184,92,126,.13),transparent 70%);pointer-events:none;z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
 .hero .mono{color:var(--rose-deep);margin-bottom:22px;display:block}
 .hero h1{font-size:clamp(52px,8.4vw,104px);font-weight:500;margin-bottom:26px}
-.hero h1 .nm{background:linear-gradient(115deg,var(--rose-deep),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 .nm{background:linear-gradient(110deg,var(--rose-deep),var(--rose) 42%,#E39BB6 55%,var(--rose) 68%,var(--rose-deep));background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:-240% 0}}
 .hero .lead{font-size:clamp(17px,2vw,20px);max-width:540px;color:var(--ink2);margin-bottom:36px}
 .hero .lead b{color:var(--ink);font-weight:600}
 .btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
@@ -62,21 +70,31 @@ header.scrolled{background:rgba(251,242,246,.85);backdrop-filter:blur(14px);box-
 .btn-primary:hover{background:var(--rose-deep);transform:translateY(-3px);box-shadow:var(--shadow-sm)}
 .btn-ghost{border-color:var(--line);color:var(--ink)}
 .btn-ghost:hover{border-color:var(--rose);color:var(--rose-deep);transform:translateY(-3px)}
+.btn-sm{padding:11px 18px;font-size:13.5px}
 .photo-wrap{position:relative;justify-self:center}
 .photo-wrap .frame{position:absolute;inset:18px -18px -18px 18px;border:1.5px solid var(--rose);border-radius:20px;z-index:0}
 .photo{position:relative;z-index:1;width:min(360px,76vw);aspect-ratio:4/4.6;border-radius:20px;overflow:hidden;background:var(--rose-tint);box-shadow:var(--shadow)}
-.photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;display:block;transition:transform .6s}
+.photo:hover img{transform:scale(1.04)}
+
+/* STATS */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{padding:32px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat .num{font-family:'Fraunces';font-size:clamp(34px,5vw,52px);font-weight:600;color:var(--rose-deep);line-height:1}
+.stat .lab{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:10px}
 
 /* MARQUEE */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:16px 0}
-.marquee .track{display:flex;gap:44px;width:max-content;animation:scroll 32s linear infinite;white-space:nowrap}
+.marquee{overflow:hidden;padding:16px 0;border-bottom:1px solid var(--line);background:var(--bg2)}
+.marquee .track{display:flex;gap:44px;width:max-content;animation:scroll 36s linear infinite;white-space:nowrap}
 .marquee span{font-family:'JetBrains Mono';font-size:13px;letter-spacing:.08em;color:var(--ink2);display:flex;align-items:center;gap:44px}
 .marquee span::after{content:'✦';color:var(--rose)}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:64px}
-.about .quote{font-family:'Fraunces';font-size:clamp(26px,3.6vw,40px);font-weight:400;color:var(--ink);line-height:1.22;margin-bottom:30px;letter-spacing:-.01em}
+.about .quote{font-family:'Fraunces';font-size:clamp(26px,3.6vw,40px);font-weight:400;color:var(--ink);line-height:1.22;margin-bottom:30px}
 .about .quote em{font-style:italic;color:var(--rose-deep)}
 .about p{font-size:16.5px;margin-bottom:18px;max-width:620px}
 .meta-list{align-self:start;border-top:1px solid var(--line)}
@@ -86,32 +104,35 @@ header.scrolled{background:rgba(251,242,246,.85);backdrop-filter:blur(14px);box-
 
 /* WORK */
 .work{background:var(--bg2)}
-.featured{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:0;box-shadow:var(--shadow-sm);margin-bottom:60px}
-.featured .info{padding:48px}
-.featured .tagline{display:inline-flex;align-items:center;gap:8px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-deep);background:var(--rose-tint);padding:7px 14px;border-radius:999px;margin-bottom:22px}
-.featured h3{font-size:38px;font-weight:500;margin-bottom:16px}
-.featured p{font-size:16px;margin-bottom:22px}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
-.tag{font-family:'JetBrains Mono';font-size:12px;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:6px 12px;border-radius:8px}
-.flinks{display:flex;gap:12px;flex-wrap:wrap}
-.featured .visual{background:linear-gradient(150deg,#F7DCE7,#EFC2D5);display:flex;align-items:center;justify-content:center;padding:44px}
-.mock{width:100%;max-width:420px;border-radius:14px;overflow:hidden;box-shadow:0 24px 50px -20px rgba(90,30,60,.5);border:1px solid rgba(255,255,255,.6)}
-.mock-bar{height:40px;background:#efe4ea;display:flex;align-items:center;gap:7px;padding:0 15px}
-.mock-bar i{width:11px;height:11px;border-radius:50%;background:#d9c3ce}
-.mock-url{margin-left:10px;flex:1;background:#fff;border-radius:7px;height:22px;display:flex;align-items:center;padding:0 12px;font-family:'JetBrains Mono';font-size:11px;color:var(--ink2)}
-.mock-body{background:#fff;padding:34px 28px;text-align:center}
-.mock-body .lg{font-family:'Fraunces';font-size:26px;color:var(--ink);font-weight:600;margin-bottom:8px}
-.mock-body .lg b{color:var(--rose)}
-.mock-body .sm{font-size:12.5px;color:var(--ink2);margin-bottom:20px;line-height:1.5}
-.mock-chips{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.mock-chips span{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.05em;color:var(--rose-deep);background:var(--rose-tint);padding:6px 11px;border-radius:7px}
+.feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:30px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .25s ease,box-shadow .25s ease;transform-style:preserve-3d;will-change:transform}
+.feat:hover{box-shadow:var(--shadow)}
+.feat-visual{height:190px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:26px;position:relative;overflow:hidden}
+.v-skill{background:linear-gradient(150deg,#F7DCE7,#E7A9C2)}
+.v-algo{background:linear-gradient(150deg,#5B3450,#9C3F62)}
+.feat-visual .wm{font-family:'Fraunces';font-size:30px;font-weight:600}
+.v-skill .wm{color:var(--ink)}.v-skill .wm b{color:var(--rose-deep)}
+.v-algo .wm{color:#fff}.v-algo .wm b{color:#F7C9DA}
+.feat-visual .vsub{font-size:12.5px;text-align:center;max-width:280px;line-height:1.5}
+.v-skill .vsub{color:#7a3a55}.v-algo .vsub{color:#F1C9D9}
+.mock-chips{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
+.mock-chips span{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.04em;padding:5px 10px;border-radius:7px}
+.v-skill .mock-chips span{color:var(--rose-deep);background:rgba(255,255,255,.6)}
+.v-algo .mock-chips span{color:#fff;background:rgba(255,255,255,.16)}
+.feat-body{padding:30px 30px 32px}
+.tagline{display:inline-flex;align-items:center;gap:7px;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--rose-deep);background:var(--rose-tint);padding:6px 12px;border-radius:999px;margin-bottom:16px}
+.feat-body h3{font-size:28px;font-weight:500;margin-bottom:12px}
+.feat-body p{font-size:15px;margin-bottom:18px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:22px}
+.tag{font-family:'JetBrains Mono';font-size:11.5px;color:var(--ink);background:var(--bg);border:1px solid var(--line);padding:5px 11px;border-radius:8px}
+.flinks{display:flex;gap:10px;flex-wrap:wrap}
 
-.proj-list{border-top:1px solid var(--line)}
-.proj{display:grid;grid-template-columns:56px 1fr auto;gap:26px;align-items:center;padding:30px 12px;border-bottom:1px solid var(--line);transition:.3s;position:relative}
+.proj-list{border-top:1px solid var(--line);margin-top:6px}
+.proj{display:grid;grid-template-columns:56px 1fr auto;gap:26px;align-items:center;padding:30px 12px;border-bottom:1px solid var(--line);transition:.3s}
 .proj:hover{background:var(--card);padding-left:22px;padding-right:22px}
 .proj .idx{font-family:'JetBrains Mono';font-size:15px;color:var(--rose);font-weight:500}
 .proj .pt{font-family:'Fraunces';font-size:23px;color:var(--ink);font-weight:500;margin-bottom:5px}
-.proj .pd{font-size:14.5px;color:var(--ink2);max-width:640px;margin-bottom:10px}
+.proj .pd{font-size:14.5px;color:var(--ink2);max-width:660px;margin-bottom:10px}
 .proj .ptags{display:flex;flex-wrap:wrap;gap:6px}
 .proj .ptags span{font-family:'JetBrains Mono';font-size:11px;color:var(--muted)}
 .proj .ptags span::after{content:'·';margin-left:6px;color:var(--line)}
@@ -121,7 +142,7 @@ header.scrolled{background:rgba(251,242,246,.85);backdrop-filter:blur(14px);box-
 .proj:hover .go{background:var(--rose);color:#fff;border-color:var(--rose);transform:rotate(-45deg)}
 
 /* SKILLS */
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:44px}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px}
 .skill-col h3{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-deep);font-weight:500;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 .skill-col ul{list-style:none}
 .skill-col li{font-size:15.5px;color:var(--ink);padding:7px 0}
@@ -140,41 +161,35 @@ header.scrolled{background:rgba(251,242,246,.85);backdrop-filter:blur(14px);box-
 .csoc svg{width:20px;height:20px}
 
 footer{background:var(--ink);color:#9C8792;border-top:1px solid rgba(235,168,193,.14)}
-.foot{display:flex;justify-content:space-between;align-items:center;padding:30px 0;font-family:'JetBrains Mono';font-size:12px;letter-spacing:.05em}
+.foot{display:flex;justify-content:space-between;align-items:center;padding:30px 0;font-family:'JetBrains Mono';font-size:12px}
 .foot .brand{color:#fff;font-family:'Fraunces';font-size:17px}
 
 .reveal{transition:.75s cubic-bezier(.2,.7,.2,1)}
 .js .reveal{opacity:0;transform:translateY(26px)}
 .reveal.in{opacity:1;transform:none}
-
-.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--rose-deep),var(--rose));z-index:70;transition:width .08s linear}
-.nav-links a.active{color:var(--rose-deep)}
-.nav-links a.active::after{width:100%}
-.featured{transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s}
-.featured:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.mock{animation:floaty 5.5s ease-in-out infinite}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 .hero .mono,.hero h1,.hero .lead,.hero .btns,.photo-wrap{animation:heroIn .9s cubic-bezier(.2,.7,.2,1) both}
 .hero .photo-wrap{animation-delay:.12s}.hero h1{animation-delay:.08s}.hero .lead{animation-delay:.18s}.hero .btns{animation-delay:.26s}
 @keyframes heroIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
 @media(max-width:900px){
-  .hero-grid,.about-grid,.featured{grid-template-columns:1fr}
-  .featured .visual{order:-1;padding:34px}
+  .hero-grid,.about-grid,.feat-grid{grid-template-columns:1fr}
   .photo-wrap{order:-1}
-  .sec{padding:84px 0}
-  .hero{padding:140px 0 70px}
+  .sec{padding:82px 0}
+  .hero{padding:140px 0 66px}
   .nav-links,.avail{display:none}
   .burger{display:flex}
+  .cursor-glow{display:none}
 }
 @media(max-width:560px){
   .wrap{padding:0 22px}
-  .featured .info{padding:32px 26px}
+  .stats-grid{grid-template-columns:1fr}
+  .stat{border-right:0;border-bottom:1px solid var(--line);padding:24px}
+  .stat:last-child{border-bottom:0}
   .proj{grid-template-columns:36px 1fr;gap:16px}
   .proj .go{display:none}
   .foot{flex-direction:column;gap:10px}
 }
-.mobile-menu{display:none;position:fixed;inset:0;z-index:55;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:30px}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:65;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:30px}
 .mobile-menu.open{display:flex}
 .mobile-menu a{font-family:'Fraunces';font-size:30px;color:var(--ink)}
 .mobile-menu .x{position:absolute;top:26px;right:26px;font-size:30px;background:none;border:0;color:var(--ink);cursor:pointer}
@@ -182,16 +197,16 @@ footer{background:var(--ink);color:#9C8792;border-top:1px solid rgba(235,168,193
 <script>document.documentElement.className+=' js';</script>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" id="glow" aria-hidden="true"></div>
 <div class="progress" id="prog"></div>
+
 <header id="hdr">
   <div class="wrap nav">
     <a href="#top" class="brand">Agam Alon<em>.</em></a>
     <div class="nav-right">
       <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
       </nav>
       <div class="avail"><span class="d"></span>Open to work</div>
     </div>
@@ -209,7 +224,7 @@ footer{background:var(--ink);color:#9C8792;border-top:1px solid rgba(235,168,193
     <div>
       <span class="mono">Software Developer — Tel Aviv, Israel</span>
       <h1><span class="nm">Agam Alon</span></h1>
-      <p class="lead">Computer Science &amp; Mathematics student at Tel Aviv University, building <b>full-stack products, automation, and machine-learning tools</b>. I like taking an idea all the way to something real, tested, and deployed.</p>
+      <p class="lead">Computer Science &amp; Mathematics student at Tel Aviv University, building <b>AI products, full-stack web apps, and machine-learning tools</b>. I like taking an idea all the way to something real, tested, and deployed.</p>
       <div class="btns">
         <a href="#work" class="btn btn-primary">See my work
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -223,10 +238,18 @@ footer{background:var(--ink);color:#9C8792;border-top:1px solid rgba(235,168,193
   </div>
 </section>
 
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><div class="num" data-count="6" data-suffix="">0</div><div class="lab">Projects built</div></div>
+    <div class="stat"><div class="num" data-count="2" data-suffix="">0</div><div class="lab">Live AI products</div></div>
+    <div class="stat"><div class="num" data-count="6" data-suffix="">0</div><div class="lab">Languages</div></div>
+  </div>
+</div>
+
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>React</span><span>TypeScript</span><span>Python</span><span>Tailwind CSS</span><span>Supabase</span><span>Playwright</span><span>Vite</span><span>SQL</span><span>NumPy</span><span>Git</span><span>Vercel</span><span>Java</span>
-    <span>React</span><span>TypeScript</span><span>Python</span><span>Tailwind CSS</span><span>Supabase</span><span>Playwright</span><span>Vite</span><span>SQL</span><span>NumPy</span><span>Git</span><span>Vercel</span><span>Java</span>
+    <span>React</span><span>Next.js</span><span>TypeScript</span><span>Python</span><span>Supabase</span><span>Tailwind CSS</span><span>Claude AI</span><span>scikit-learn</span><span>Playwright</span><span>Monaco</span><span>Vercel</span><span>SQL</span>
+    <span>React</span><span>Next.js</span><span>TypeScript</span><span>Python</span><span>Supabase</span><span>Tailwind CSS</span><span>Claude AI</span><span>scikit-learn</span><span>Playwright</span><span>Monaco</span><span>Vercel</span><span>SQL</span>
   </div>
 </div>
 
@@ -235,13 +258,13 @@ footer{background:var(--ink);color:#9C8792;border-top:1px solid rgba(235,168,193
     <div class="reveal">
       <div class="sec-label"><span class="mono">01</span><span class="mono">About</span><span class="bar"></span></div>
       <p class="quote">Most of what I know, I <em>taught myself</em> — and I take full ownership of everything I build.</p>
-      <p>I'm a second-year Computer Science &amp; Mathematics student at Tel Aviv University. I pair a strong mathematical foundation with hands-on development across the web, backend, automation, and machine learning.</p>
+      <p>I'm a second-year Computer Science &amp; Mathematics student at Tel Aviv University. I pair a strong mathematical foundation with hands-on development across AI products, the web, automation, and machine learning.</p>
       <p>I pick up new tools quickly, care about writing code that's clean, tested, and maintainable, and I'm at my best when I'm solving a real problem and shipping the result. Motivated, detail-oriented, and always learning something new.</p>
     </div>
     <div class="meta-list reveal">
       <div class="meta-row"><div class="k">Education</div><div class="v">B.Sc. Computer Science &amp; Mathematics</div></div>
       <div class="meta-row"><div class="k">University</div><div class="v">Tel Aviv University</div></div>
-      <div class="meta-row"><div class="k">Focus</div><div class="v">Full-stack · Automation · ML</div></div>
+      <div class="meta-row"><div class="k">Focus</div><div class="v">AI · Full-stack · Machine Learning</div></div>
       <div class="meta-row"><div class="k">Based in</div><div class="v">Tel Aviv, Israel</div></div>
       <div class="meta-row"><div class="k">Currently</div><div class="v">Open to internships &amp; junior roles</div></div>
     </div>
@@ -252,51 +275,70 @@ footer{background:var(--ink);color:#9C8792;border-top:1px solid rgba(235,168,193
   <div class="wrap">
     <div class="sec-label reveal"><span class="mono">02</span><span class="mono">Selected work</span><span class="bar"></span></div>
 
-    <div class="featured reveal">
-      <div class="info">
-        <span class="tagline">★ Featured · Live product</span>
-        <h3>SkillProof</h3>
-        <p>A platform that bridges the gap between academic training and real production engineering. Junior developers solve verifiable, GitHub-based challenges from real companies, get their pull requests reviewed, and build a portfolio of proven skills to fast-track their first job.</p>
-        <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">Vercel</span></div>
-        <div class="flinks">
-          <a href="https://skillproof-nine.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">Visit live site
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          <a href="https://github.com/agamalonn/SkillProof" target="_blank" rel="noopener" class="btn btn-ghost">View code</a>
+    <div class="feat-grid">
+      <article class="feat reveal" data-tilt>
+        <div class="feat-visual v-skill">
+          <div class="wm">Skill<b>Proof</b></div>
+          <div class="vsub">Prove your skills with real, verifiable challenges — and land your first role.</div>
+          <div class="mock-chips"><span>Challenges</span><span>PR Reviews</span><span>Verified Portfolio</span></div>
         </div>
-      </div>
-      <div class="visual">
-        <div class="mock">
-          <div class="mock-bar"><i></i><i></i><i></i><div class="mock-url">skillproof-nine.vercel.app</div></div>
-          <div class="mock-body">
-            <div class="lg">Skill<b>Proof</b></div>
-            <div class="sm">Prove your skills with real, verifiable challenges — and land your first role.</div>
-            <div class="mock-chips"><span>Challenges</span><span>PR Reviews</span><span>Verified Portfolio</span></div>
+        <div class="feat-body">
+          <span class="tagline">★ Featured · Live product</span>
+          <h3>SkillProof</h3>
+          <p>A platform that bridges academic training and real production engineering. Junior developers solve verifiable, GitHub-based challenges from real companies, get pull requests reviewed, and build a portfolio of proven skills to fast-track their first job.</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind</span><span class="tag">Vercel</span></div>
+          <div class="flinks">
+            <a href="https://skillproof-nine.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Live site
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a href="https://github.com/agamalonn/SkillProof" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Code</a>
           </div>
         </div>
-      </div>
+      </article>
+
+      <article class="feat reveal" data-tilt>
+        <div class="feat-visual v-algo">
+          <div class="wm">AlgoMentor<b> AI</b></div>
+          <div class="vsub">An AI that interviews you like a real FAANG engineer — and coaches you to improve.</div>
+          <div class="mock-chips"><span>AI Interviewer</span><span>Hint Ladder</span><span>Scorecard</span></div>
+        </div>
+        <div class="feat-body">
+          <span class="tagline">★ Featured · AI product</span>
+          <h3>AlgoMentor AI</h3>
+          <p>An AI-powered coding-interview coach. Practice original algorithm problems against an AI that acts like a real interviewer — it asks for your approach, escalates hints gradually, reviews your code for correctness, complexity, and communication, and ends every session with a structured scorecard and adaptive recommendations. Deliberately not a chatbot that hands out answers.</p>
+          <div class="tags"><span class="tag">Next.js 14</span><span class="tag">TypeScript</span><span class="tag">Supabase</span><span class="tag">Claude</span><span class="tag">Monaco</span></div>
+          <div class="flinks">
+            <a href="https://github.com/agamalonn/algomentor-ai" target="_blank" rel="noopener" class="btn btn-primary btn-sm">View code
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </article>
     </div>
 
     <div class="proj-list">
-      <a class="proj reveal" href="https://github.com/agamalonn" target="_blank" rel="noopener">
-        <div class="idx">02</div>
-        <div><div class="pt">Real Estate Web App</div><div class="pd">A full-stack web application built end-to-end — front-end, SQL database with Supabase, and production deployment on Vercel in a Linux environment.</div><div class="ptags"><span>TypeScript</span><span>Supabase</span><span>SQL</span><span>Vercel</span></div></div>
-        <div class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </a>
-      <a class="proj reveal" href="https://github.com/agamalonn" target="_blank" rel="noopener">
+      <a class="proj reveal" href="https://github.com/agamalonn/svm-kernel-comparison" target="_blank" rel="noopener">
         <div class="idx">03</div>
-        <div><div class="pt">Browser Automation &amp; Testing</div><div class="pd">Python scripts driving structured browser interaction and end-to-end workflows with Playwright — handling dynamic elements and error cases for robust, repeatable runs.</div><div class="ptags"><span>Python</span><span>Playwright</span><span>E2E Testing</span></div></div>
+        <div><div class="pt">SVM Kernel Comparison</div><div class="pd">A machine-learning study of how different SVM kernels (linear, polynomial, RBF) shape decision boundaries on non-linearly separable concentric-ring data — exploring the kernel trick, hyperparameter sensitivity, the bias-variance tradeoff, and robustness to label noise, with clear decision-boundary visualizations.</div><div class="ptags"><span>Python</span><span>scikit-learn</span><span>NumPy</span><span>Matplotlib</span></div></div>
         <div class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </a>
       <a class="proj reveal" href="https://github.com/agamalonn" target="_blank" rel="noopener">
         <div class="idx">04</div>
-        <div><div class="pt">Vocabulary Learning Game</div><div class="pd">An interactive English-learning quiz in Python with a custom word database, Hebrew support, audio, and live feedback — data model and game logic designed end-to-end.</div><div class="ptags"><span>Python</span><span>Game logic</span><span>Data model</span></div></div>
+        <div><div class="pt">Real Estate Web App</div><div class="pd">A full-stack web application built end-to-end — front-end, SQL database with Supabase, and production deployment on Vercel in a Linux environment.</div><div class="ptags"><span>TypeScript</span><span>Supabase</span><span>SQL</span><span>Vercel</span></div></div>
         <div class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </a>
       <a class="proj reveal" href="https://github.com/agamalonn" target="_blank" rel="noopener">
         <div class="idx">05</div>
-        <div><div class="pt">Machine Learning Projects</div><div class="pd">Hands-on ML practice covering data preparation, modeling, visualization, and analysis with the core Python data stack.</div><div class="ptags"><span>Python</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span></div></div>
+        <div><div class="pt">Browser Automation &amp; Testing</div><div class="pd">Python scripts driving structured browser interaction and end-to-end workflows with Playwright — handling dynamic elements and error cases for robust, repeatable runs.</div><div class="ptags"><span>Python</span><span>Playwright</span><span>E2E Testing</span></div></div>
         <div class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </a>
+      <a class="proj reveal" href="https://github.com/agamalonn" target="_blank" rel="noopener">
+        <div class="idx">06</div>
+        <div><div class="pt">Vocabulary Learning Game</div><div class="pd">An interactive English-learning quiz in Python with a custom word database, Hebrew support, audio, and live feedback — data model and game logic designed end-to-end.</div><div class="ptags"><span>Python</span><span>Game logic</span><span>Data model</span></div></div>
+        <div class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:38px" class="reveal">
+      <a class="btn btn-ghost" href="https://github.com/agamalonn" target="_blank" rel="noopener">All projects on GitHub
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.85 9.73.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.79.62-3.38-1.37-3.38-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.66.35-1.12.63-1.38-2.23-.26-4.57-1.14-4.57-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.59 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
     </div>
   </div>
 </section>
@@ -305,10 +347,11 @@ footer{background:var(--ink);color:#9C8792;border-top:1px solid rgba(235,168,193
   <div class="wrap">
     <div class="sec-label reveal"><span class="mono">03</span><span class="mono">Capabilities</span><span class="bar"></span></div>
     <div class="skills-grid">
-      <div class="skill-col reveal"><h3>Languages</h3><ul><li>Python</li><li>Java</li><li>JavaScript</li><li>TypeScript</li><li>C</li><li>Assembly (MIPS)</li></ul></div>
-      <div class="skill-col reveal"><h3>Frontend</h3><ul><li>React</li><li>Tailwind CSS</li><li>HTML</li><li>CSS</li><li>Vite</li></ul></div>
-      <div class="skill-col reveal"><h3>Backend &amp; Data</h3><ul><li>Supabase</li><li>SQL</li><li>REST APIs</li><li>NumPy · Pandas</li><li>Matplotlib</li></ul></div>
-      <div class="skill-col reveal"><h3>Tools &amp; Practice</h3><ul><li>Git &amp; GitHub</li><li>Playwright · Testing</li><li>Debugging</li><li>Vercel · Linux</li><li>VS Code</li></ul></div>
+      <div class="skill-col reveal"><h3>Languages</h3><ul><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>Java</li><li>C</li><li>Assembly (MIPS)</li></ul></div>
+      <div class="skill-col reveal"><h3>Frameworks &amp; UI</h3><ul><li>React</li><li>Next.js 14</li><li>Tailwind CSS</li><li>shadcn/ui</li><li>Vite</li></ul></div>
+      <div class="skill-col reveal"><h3>Backend &amp; Data</h3><ul><li>Supabase · Postgres</li><li>SQL · RLS</li><li>REST APIs</li><li>NumPy · Pandas</li></ul></div>
+      <div class="skill-col reveal"><h3>AI &amp; ML</h3><ul><li>Anthropic Claude</li><li>Vercel AI SDK</li><li>scikit-learn</li><li>Matplotlib</li></ul></div>
+      <div class="skill-col reveal"><h3>Tools &amp; Practice</h3><ul><li>Git &amp; GitHub</li><li>Playwright · Testing</li><li>Monaco Editor</li><li>Vercel · Linux</li></ul></div>
     </div>
   </div>
 </section>
@@ -336,23 +379,39 @@ footer{background:var(--ink);color:#9C8792;border-top:1px solid rgba(235,168,193
 
 <script>
 const hdr=document.getElementById('hdr');
-addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>28));
-const mm=document.getElementById('mm');
-document.getElementById('burger').addEventListener('click',()=>mm.classList.add('open'));
-document.getElementById('mmx').addEventListener('click',()=>mm.classList.remove('open'));
-mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const prog=document.getElementById('prog');
 const secs=[...document.querySelectorAll('section[id]')];
 const links=[...document.querySelectorAll('.nav-links a')];
 addEventListener('scroll',()=>{
+  hdr.classList.toggle('scrolled',scrollY>28);
   const st=scrollY, dh=document.documentElement.scrollHeight-innerHeight;
   prog.style.width=(dh>0?st/dh*100:0)+'%';
-  let cur='';
-  for(const s of secs){if(st>=s.offsetTop-140)cur=s.id;}
+  let cur='';for(const s of secs){if(st>=s.offsetTop-140)cur=s.id;}
   links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
 },{passive:true});
+
+const mm=document.getElementById('mm');
+document.getElementById('burger').addEventListener('click',()=>mm.classList.add('open'));
+document.getElementById('mmx').addEventListener('click',()=>mm.classList.remove('open'));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const el=e.target,t=+el.dataset.count;let n=0;const step=Math.max(1,Math.ceil(t/32));const iv=setInterval(()=>{n+=step;if(n>=t){n=t;clearInterval(iv)}el.textContent=n+(el.dataset.suffix||'')},34);cio.unobserve(el)}}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+const fine=matchMedia('(pointer:fine)').matches;
+if(fine){
+  const glow=document.getElementById('glow');
+  addEventListener('mousemove',e=>{glow.style.transform=`translate(${e.clientX}px,${e.clientY}px)`},{passive:true});
+  const hero=document.querySelector('.hero');
+  hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px')},{passive:true});
+  document.querySelectorAll('[data-tilt]').forEach(el=>{
+    el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();const px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(1000px) rotateY(${px*5}deg) rotateX(${-py*5}deg) translateY(-6px)`},{passive:true});
+    el.addEventListener('mouseleave',()=>{el.style.transform=''});
+  });
+} else { const g=document.getElementById('glow'); if(g) g.remove(); }
 </script>
 </body>
 </html>
