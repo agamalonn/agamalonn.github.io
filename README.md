@@ -1,22 +1,33 @@
-# Agam Alon — Portfolio
+# Agam Alon Portfolio
 
-Personal portfolio website of **Agam Alon** — Computer Science & Mathematics student and software developer, Tel Aviv.
+Personal portfolio website for **Agam Alon** — Computer Science & Mathematics student at Tel Aviv University, focused on AI products, full-stack development, automation, cybersecurity, and machine learning.
 
-🔗 **Live site:** _add your link here after enabling GitHub Pages_ (e.g. `https://agamalonn.github.io/`)
+## Live Site
 
-## About
+[https://agamalonn.github.io/](https://agamalonn.github.io/)
 
-A single-page portfolio featuring my work in full-stack development, automation, and machine learning — including [SkillProof](https://skillproof-nine.vercel.app/), a platform that gives junior developers verifiable, GitHub-based challenges to build a proven portfolio.
+## Purpose
 
-## Built with
+This site is designed as a clean entry point for recruiters and interviewers. It highlights selected projects, technical strengths, and contact links in one place.
 
-- HTML, CSS, and vanilla JavaScript — a single, self-contained `index.html`
-- Google Fonts (Fraunces, Inter, JetBrains Mono)
-- No build step, no dependencies
+## Featured Work
 
-## Run locally
+- [SkillProof](https://github.com/agamalonn/SkillProof) — product prototype for verifiable GitHub-based junior developer challenges.
+- [AlgoMentor AI](https://github.com/agamalonn/algomentor-ai) — AI-powered coding interview coach with scoring, hint ladder, and adaptive recommendations.
+- [SVM Kernel Comparison](https://github.com/agamalonn/svm-kernel-comparison) — machine learning project visualizing SVM decision boundaries and kernel behavior.
+- [Pathfinder Scanner](https://github.com/agamalonn/pathfinder-scanner) — cybersecurity-oriented network scanning and attack-surface mapping tool.
+- [Web Security Analysis Case Study](https://github.com/agamalonn/Web-Security-Analysis-Case-Study) — responsible web application security and privacy research case study.
 
-Just open `index.html` in any browser — that's it.
+## Built With
+
+- HTML, CSS, and vanilla JavaScript
+- Responsive single-page layout
+- GitHub Pages hosting
+- No build step and no external application runtime
+
+## Local Preview
+
+Open `index.html` in a browser.
 
 ## Contact
 
