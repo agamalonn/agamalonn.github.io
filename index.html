@@ -101,6 +101,22 @@ header.scrolled{background:rgba(251,242,246,.85);backdrop-filter:blur(14px);box-
 .meta-row{padding:18px 0;border-bottom:1px solid var(--line)}
 .meta-row .k{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
 .meta-row .v{font-size:15.5px;color:var(--ink);font-weight:500}
+.statement{margin:54px 0 8px;padding:32px 40px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--rose);border-radius:14px;max-width:920px}
+.statement p{font-size:16.5px;margin-bottom:12px}
+.statement .punch{font-family:'Fraunces';font-style:italic;font-size:clamp(20px,2.6vw,27px);color:var(--rose-deep);font-weight:500;margin:8px 0 0;line-height:1.3}
+.things-title{font-size:clamp(22px,3vw,30px);margin:58px 0 24px;font-weight:500}
+.things{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:16px}
+.thing{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.thing:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);border-color:var(--rose-tint)}
+.thing .ti{font-size:22px;flex-shrink:0}
+.thing p{font-size:14.8px;color:var(--ink2);margin:0}
+.cat{display:flex;gap:20px;align-items:flex-start;margin-top:26px;padding:26px 30px;background:linear-gradient(150deg,#F7DCE7,#F1C6D7);border-radius:18px}
+.cat-emoji{font-size:40px;flex-shrink:0;animation:catbob 3.4s ease-in-out infinite;transform-origin:bottom center}
+@keyframes catbob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-5px) rotate(4deg)}}
+.cat-h{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rose-deep);margin-bottom:8px;font-weight:500}
+.cat p{font-size:15.5px;color:#6D3550;margin:0}
+.cat b{color:var(--rose-deep)}
+@media(max-width:560px){.statement{padding:24px}.cat{flex-direction:column;gap:12px;padding:24px}}
 
 /* WORK */
 .work{background:var(--bg2)}
@@ -254,19 +270,45 @@ footer{background:var(--ink);color:#9C8792;border-top:1px solid rgba(235,168,193
 </div>
 
 <section class="sec" id="about">
-  <div class="wrap about-grid">
-    <div class="reveal">
-      <div class="sec-label"><span class="mono">01</span><span class="mono">About</span><span class="bar"></span></div>
-      <p class="quote">Most of what I know, I <em>taught myself</em> — and I take full ownership of everything I build.</p>
-      <p>I'm a second-year Computer Science &amp; Mathematics student at Tel Aviv University. I pair a strong mathematical foundation with hands-on development across AI products, the web, automation, and machine learning.</p>
-      <p>I pick up new tools quickly, care about writing code that's clean, tested, and maintainable, and I'm at my best when I'm solving a real problem and shipping the result. Motivated, detail-oriented, and always learning something new.</p>
+  <div class="wrap">
+    <div class="sec-label reveal"><span class="mono">01</span><span class="mono">About</span><span class="bar"></span></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="quote">I'd rather take on a challenge and learn from it than spend years wondering, <em>"What if I had tried?"</em></p>
+        <p>I'm a Computer Science &amp; Mathematics student at Tel Aviv University who loves solving problems, building software, and continuously learning. Curiosity is what drives me every day — I don't mind making mistakes or asking questions; I see both as essential parts of becoming a better engineer.</p>
+        <p>Outside of university, I enjoy turning ideas into real products. Whether it's building full-stack applications, experimenting with AI, or creating automation tools, I'm happiest when I'm designing, building, and improving something from the ground up. I like understanding how things work — not just using them.</p>
+        <p>Beyond programming, I read, listen to technology and science podcasts, work out at the gym, and even build LEGO sets. Each of those strengthens a different way of thinking — creativity, patience, problem-solving, attention to detail.</p>
+      </div>
+      <div class="meta-list reveal">
+        <div class="meta-row"><div class="k">Education</div><div class="v">B.Sc. Computer Science &amp; Mathematics</div></div>
+        <div class="meta-row"><div class="k">University</div><div class="v">Tel Aviv University</div></div>
+        <div class="meta-row"><div class="k">Focus</div><div class="v">AI · Full-stack · Machine Learning</div></div>
+        <div class="meta-row"><div class="k">Based in</div><div class="v">Tel Aviv, Israel</div></div>
+        <div class="meta-row"><div class="k">Currently</div><div class="v">Open to internships &amp; junior roles</div></div>
+      </div>
     </div>
-    <div class="meta-list reveal">
-      <div class="meta-row"><div class="k">Education</div><div class="v">B.Sc. Computer Science &amp; Mathematics</div></div>
-      <div class="meta-row"><div class="k">University</div><div class="v">Tel Aviv University</div></div>
-      <div class="meta-row"><div class="k">Focus</div><div class="v">AI · Full-stack · Machine Learning</div></div>
-      <div class="meta-row"><div class="k">Based in</div><div class="v">Tel Aviv, Israel</div></div>
-      <div class="meta-row"><div class="k">Currently</div><div class="v">Open to internships &amp; junior roles</div></div>
+
+    <div class="statement reveal">
+      <p>Although I'm still early in my career, I bring <b>curiosity, discipline, and a strong work ethic</b> to everything I do. I don't see questions as a sign of weakness — they're how I learn faster. Every challenge is an opportunity to grow, and I'm looking for a team where I can contribute, learn, and create meaningful software.</p>
+      <p class="punch">Failure doesn't scare me nearly as much as the thought of never trying.</p>
+    </div>
+
+    <h3 class="things-title reveal">A few things about me</h3>
+    <div class="things reveal">
+      <div class="thing"><span class="ti">💡</span><p>I love turning ideas into real, shipped products.</p></div>
+      <div class="thing"><span class="ti">📚</span><p>Always learning — through books, courses, and podcasts.</p></div>
+      <div class="thing"><span class="ti">🧩</span><p>I enjoy cracking challenging algorithmic problems.</p></div>
+      <div class="thing"><span class="ti">🏋️</span><p>Fitness keeps me disciplined and focused.</p></div>
+      <div class="thing"><span class="ti">🧱</span><p>Still a LEGO builder — complex systems come together one piece at a time.</p></div>
+      <div class="thing"><span class="ti">🚀</span><p>My goal: software that makes a real impact on people's lives.</p></div>
+    </div>
+
+    <div class="cat reveal">
+      <span class="cat-emoji">🐈</span>
+      <div>
+        <div class="cat-h">P.S. — meet my code reviewer</div>
+        <p>Yes, my GitHub avatar is a cat. That's <b>Yuli</b>, my cat and self-appointed senior reviewer. Her process is rigorous: walk across the keyboard mid-merge-conflict, nap on the warmest laptop in the room, and veto any commit made after midnight by sitting on it. She has never approved a pull request — but she's never shipped a bug either, which is more than most of us can say. 🐾</p>
+      </div>
     </div>
   </div>
 </section>
