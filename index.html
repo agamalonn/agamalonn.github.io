@@ -335,7 +335,7 @@ ul,ol{list-style:none}
 .ed-two span{font-size:.8em;color:#5E574E}
 .ed-two b{display:block;font-size:1.15em;margin:.3em 0 .1em}
 
-/* NadlanEast mock */
+/* stealth phone mock */
 .tilt{--rx:0deg;--ry:0deg;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .8s var(--ease)}
 .js .visual .tilt{opacity:0;translate:0 40px;transition:transform .8s var(--ease),opacity 1.2s .25s var(--ease),translate 1.4s .25s var(--ease)}
 .js .visual.in .tilt{opacity:1;translate:0 0}
@@ -377,6 +377,22 @@ ul,ol{list-style:none}
 .js .visual .nd-float{opacity:0;transform:translateY(16px);transition:opacity .9s 1.1s var(--ease),transform 1.1s 1.1s var(--ease)}
 .js .visual.in .nd-float{opacity:1;transform:none}
 .js .visual .nd-float.two{transition-delay:1.5s}
+
+.rd{display:block;height:.75em;border-radius:.3em;background:#1A2430}
+.rd.soft{background:#C9C3B8;height:.6em}
+.rd.warm{background:#E9C79A;height:.55em}
+.w90{width:90%}.w80{width:80%}.w60{width:60%}.w55{width:55%}
+.rd.chip{width:3.2em;height:1.3em;border-radius:99em;background:#EDE6DA}
+.rd-row{display:flex;gap:.35em;margin:.2em 0}
+.rd-ai{margin-top:auto;background:#FFF3E2;border-radius:.6em;padding:.55em .65em;display:flex;flex-direction:column;gap:.35em}
+.rd-ai small{font-size:.74em;font-weight:700;color:#6A4416}
+.rd-pill{font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.rd-hero{flex:0 0 46%;background:radial-gradient(120% 90% at 30% 0%,#2E4257,#13202E);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4em;color:#C9D3DD;font-size:.8em;letter-spacing:.06em;text-transform:uppercase}
+.rd-ring{position:relative;width:7.5em;height:7.5em;display:grid;place-items:center}
+.rd-ring svg{position:absolute;inset:0;width:100%;height:100%}
+.rd-ring b{font-size:1.8em;color:#F6B865;letter-spacing:0}
+.js .visual .rd-arc{stroke-dashoffset:94.2;transition:stroke-dashoffset 1.8s .9s var(--ease)}
+.js .visual.in .rd-arc{stroke-dashoffset:7.5}
 
 /* more projects */
 .more{margin-top:clamp(120px,15vw,200px)}
@@ -667,44 +683,42 @@ ul,ol{list-style:none}
 
       <article class="feat">
         <div class="feat-text">
-          <div class="feat-meta mono" data-r><b>02</b><span>2026</span><span>Full stack product</span></div>
-          <h3 data-r>NadlanEast</h3>
-          <p class="one" data-r>Looking for an apartment, but it works like a dating app.</p>
-          <p class="desc" data-r>A Hebrew real estate app that connects buyers, private sellers and realtors. Buyers set a budget, areas and must haves, then swipe through listings while a match score ranks every property: an AI match runs on the server with Gemini, and a built in scoring algorithm takes over if the AI is unavailable. Realtors are verified by license, sellers can boost listings, and there are chats, listing alerts, paid plans and an admin panel. The latest version is built for a pilot with real users and real listings, with hardened database permissions and strict security headers.</p>
+          <div class="feat-meta mono" data-r><b>02</b><span>2026</span><span>Startup, in stealth</span></div>
+          <h3 data-r>Stealth startup</h3>
+          <p class="one" data-r>The idea stays quiet for now. The engineering doesn't have to.</p>
+          <p class="desc" data-r>A product I'm building toward a startup, so I'm keeping the concept to myself until launch. What I can share is how it's built: a two sided app in Hebrew, taken end to end from the database to payments. Users are ranked for each other by an AI match score that runs on the server, with my own scoring algorithm as a fallback when the model is unavailable. Professional users go through a verification flow, and there are chats, alerts, paid plans and an admin panel. The latest version is hardened for a pilot with real users: row level security on every table, strict security headers and no demo data.</p>
           <dl class="specs" data-r>
             <div><dt>Built with</dt><dd>React, Vite, Supabase (Postgres, Auth, Storage), Stripe, Gemini API, Vercel serverless, Framer Motion</dd></div>
-            <div><dt>Inside</dt><dd>Swipe matching, AI match scores, realtor license checks, six Stripe plans, chat, alerts, row level security</dd></div>
+            <div><dt>Inside</dt><dd>AI match scoring with fallback, user verification, six Stripe plans, chat, alerts, admin panel, row level security</dd></div>
           </dl>
-          <div class="feat-links" data-r><span class="note mono">Private repository, happy to walk you through it</span></div>
+          <div class="feat-links" data-r><span class="note mono">Private while in stealth, happy to talk about how it's built</span></div>
         </div>
         <div class="visual tone-navy" data-r>
           <div class="win-par" data-speed="0.05">
             <div class="nd-wrap tilt" aria-hidden="true">
               <div class="phone">
-                <div class="ph-in" dir="rtl" lang="he">
-                  <div class="nd-top"><b>NadlanEast</b><span>קנייה · גוש דן</span></div>
+                <div class="ph-in">
+                  <div class="nd-top"><b>████</b><span class="rd-pill">stealth</span></div>
                   <div class="nd-stack">
                     <div class="nd-card b2"></div><div class="nd-card b1"></div>
                     <div class="nd-card f">
-                      <div class="nd-img"><svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="150" cy="30" r="14" fill="#FFE2B0" opacity=".9"/><g fill="#7C3F44" opacity=".55"><rect x="0" y="58" width="34" height="62"/><rect x="150" y="50" width="50" height="70"/></g><g fill="#5A2E3A"><rect x="30" y="34" width="46" height="86"/><rect x="86" y="18" width="52" height="102"/><rect x="140" y="64" width="40" height="56"/></g><g fill="#FFD9A0" opacity=".85"><rect x="38" y="44" width="8" height="8"/><rect x="58" y="44" width="8" height="8"/><rect x="38" y="62" width="8" height="8"/><rect x="58" y="80" width="8" height="8"/><rect x="96" y="30" width="9" height="9"/><rect x="118" y="30" width="9" height="9"/><rect x="96" y="50" width="9" height="9"/><rect x="118" y="70" width="9" height="9"/><rect x="96" y="90" width="9" height="9"/><rect x="150" y="76" width="7" height="7"/><rect x="164" y="90" width="7" height="7"/></g><rect x="0" y="112" width="200" height="8" fill="#3D2230"/></svg><em class="nd-match">92% התאמה</em><em class="nd-new">חדש</em></div>
+                      <div class="rd-hero"><div class="rd-ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="3"/><circle class="rd-arc" cx="18" cy="18" r="15" fill="none" stroke="#F6B865" stroke-width="3" stroke-linecap="round" stroke-dasharray="94.2" stroke-dashoffset="7.5" transform="rotate(-90 18 18)"/></svg><b>92%</b></div><span>match score</span></div>
                       <div class="nd-body">
-                        <b>4 חדרים עם מרפסת</b>
-                        <span>פתח תקווה · ₪2,650,000</span>
-                        <div class="nd-tags"><i>98 מ״ר</i><i>קומה 5</i><i>חניה</i></div>
-                        <div class="nd-why"><span><b>✓</b>תקציב</span><span><b>✓</b>אזור</span><span><b>✓</b>מרפסת</span></div>
-                        <p class="nd-ai"><small>למה זה מתאים לך</small>בתוך התקציב, באזור שבחרת ויש מרפסת כמו שביקשת.</p>
+                        <i class="rd w80"></i><i class="rd w55 soft"></i><i class="rd w90 soft"></i><i class="rd w60 soft"></i>
+                        <div class="rd-row"><i class="rd chip"></i><i class="rd chip"></i><i class="rd chip"></i></div>
+                        <div class="rd-ai"><small>Why it's a match</small><i class="rd w90 warm"></i><i class="rd w60 warm"></i></div>
                       </div>
                     </div>
                   </div>
                   <div class="nd-actions">
                     <span><svg viewBox="0 0 24 24" fill="none" stroke="#9AA7B5" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
-                    <span class="big"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.4-9.3C1.2 8.2 3.4 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.6 0 5.8 3.7 4.4 7.2C19.5 16.4 12 21 12 21z"/></svg></span>
+                    <span class="big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
                     <span><svg viewBox="0 0 24 24" fill="#F6B865"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span>
                   </div>
                 </div>
               </div>
-              <div class="nd-float"><small>AI match</small><b>Scored against your budget, areas and must haves</b></div>
-              <div class="nd-float two"><small>For realtors</small><b>3 buyers match this listing</b><span>Hot leads, ranked by match</span></div>
+              <div class="nd-float"><small>AI match</small><b>Server side scoring, with a fallback algorithm</b></div>
+              <div class="nd-float two"><small>Status</small><b>Pilot ready, in stealth</b><span>Details after launch</span></div>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ Live at [agamalonn.github.io](https://agamalonn.github.io/)
 ## Featured work
 
 - **ExamDNA** (private): reads a Logic exam question and returns its structured DNA (topic, skill, question family, answer type, difficulty), validated against a course vocabulary and scored against a hand labeled gold set.
-- **NadlanEast** (private): a Hebrew real estate app where buyers swipe through listings, with AI match scores, realtor verification, Stripe plans and Supabase.
+- **Stealth startup** (private): a two sided app with server side AI match scoring, user verification, Stripe plans and Supabase. Details after launch.
 - [StudyOS](https://github.com/agamalonn/studyos): a calm study command center for exam season, with study suggestions, a PDF reader with page notes and Claude explanations in Hebrew or English.
 - [AlgoMentor AI](https://github.com/agamalonn/algomentor-ai): a coding interview coach with an AI interviewer, a hint ladder, code review and a final scorecard.
 - [SkillProof](https://github.com/agamalonn/SkillProof): realistic GitHub missions for junior developers, with pull request proof and a portfolio style workspace.
