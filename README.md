@@ -6,6 +6,8 @@ Live at [agamalonn.github.io](https://agamalonn.github.io/)
 
 ## Featured work
 
+- **ExamDNA** (private): reads a Logic exam question and returns its structured DNA (topic, skill, question family, answer type, difficulty), validated against a course vocabulary and scored against a hand labeled gold set.
+- **NadlanEast** (private): a Hebrew real estate app where buyers swipe through listings, with AI match scores, realtor verification, Stripe plans and Supabase.
 - [StudyOS](https://github.com/agamalonn/studyos): a calm study command center for exam season, with study suggestions, a PDF reader with page notes and Claude explanations in Hebrew or English.
 - [AlgoMentor AI](https://github.com/agamalonn/algomentor-ai): a coding interview coach with an AI interviewer, a hint ladder, code review and a final scorecard.
 - [SkillProof](https://github.com/agamalonn/SkillProof): realistic GitHub missions for junior developers, with pull request proof and a portfolio style workspace.
@@ -15,6 +17,8 @@ Live at [agamalonn.github.io](https://agamalonn.github.io/)
 - [Pathfinder Scanner](https://github.com/agamalonn/pathfinder-scanner): network service discovery and attack surface reporting.
 - [Web Security Case Study](https://github.com/agamalonn/Web-Security-Analysis-Case-Study): an anonymized, responsible security review of a live web platform.
 - [SVM Kernel Comparison](https://github.com/agamalonn/svm-kernel-comparison): how SVM kernels shape decision boundaries on concentric rings.
+- **CreditLens** (private): credit risk model monitoring with out of time validation, calibration, drift tracking and a model card.
+- [SymNMF Clustering](https://github.com/agamalonn/symnmf-clustering): a Software Project course pair project, clustering with symmetric NMF in C and Python.
 - [Clipboard Translator](https://github.com/agamalonn/translator-app): instant English to Hebrew translation with speech and a saved word list.
 - [MindMirror](https://github.com/agamalonn/Mind_mirror.py): an AI journaling companion and a study in prompt design.
 - [Pink Flashcards](https://github.com/agamalonn/pink-flashcard-game): a vocabulary game with sound and progress tracking.

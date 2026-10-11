@@ -296,6 +296,88 @@ ul,ol{list-style:none}
 .sp-pr{margin-top:auto;display:flex;justify-content:space-between;gap:.5em;font-family:var(--mono);font-size:.74em;color:#9C9387;padding-top:.7em;border-top:1px solid rgba(255,255,255,.1)}
 .sp-pr b{color:#7FB08A;font-weight:500}
 
+
+/* private note */
+.note{display:inline-flex;align-items:center;gap:9px;color:var(--muted)}
+.note::before{content:'';width:7px;height:7px;border-radius:50%;border:1px solid currentColor}
+.tone-slate{--tone:#C3CBD2}
+.tone-navy{--tone:#1D2733}
+.tone-navy::before{background:radial-gradient(80% 70% at 85% 0%,rgba(232,160,76,.18),transparent 60%),radial-gradient(70% 60% at 0% 100%,rgba(0,0,0,.3),transparent 70%)}
+
+/* ExamDNA mock */
+.ed{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:30em}
+.ed-q{padding:1.4em 1.4em;border-right:1px solid #E9E5DC;display:flex;flex-direction:column;gap:.8em;background:#F7F6F2}
+.ed small{display:block;font-size:.72em;letter-spacing:.08em;text-transform:uppercase;color:#958D82}
+.ed-q p{font-family:Arial,'Arial Hebrew',sans-serif;font-size:1.06em;line-height:1.6;background:#fff;border:1px solid #E6E2DA;border-radius:.6em;padding:.85em 1em;color:#1D1A16}
+.ed-f{direction:ltr;unicode-bidi:isolate;font-family:var(--mono);font-size:.88em;background:#EEF1F5;color:#2D4A6B;padding:.1em .35em;border-radius:.3em;white-space:nowrap}
+.ed-meta{display:flex;gap:.4em}
+.ed-meta span{font-size:.74em;padding:.3em .7em;border-radius:99em;background:#ECEAE4;color:#6C655C}
+.ed-btn{align-self:flex-start;font-style:normal;font-size:.86em;font-weight:500;background:#1E2B3A;color:#EEF1F5;padding:.55em 1.1em;border-radius:99em}
+.ed-eval{margin-top:auto;background:#fff;border:1px solid #E6E2DA;border-radius:.6em;padding:.8em .9em;display:flex;flex-direction:column;gap:.45em}
+.ed-row{display:grid;grid-template-columns:7.2em minmax(0,1fr) 2.6em;gap:.6em;align-items:center;font-size:.8em;color:#5E574E}
+.ed-row b{text-align:right;color:#1D1A16;font-weight:600}
+.ed .mbar{margin:0}
+.ed .mbar i{background:#3E5A78}
+.ed-dna{padding:1.4em 1.5em;display:flex;flex-direction:column;gap:.9em}
+.ed-h{display:flex;justify-content:space-between;align-items:center}
+.ed-h b{font-size:1.4em;font-weight:600;letter-spacing:-.02em}
+.ed-h em{font-style:normal;font-size:.76em;padding:.3em .75em;border-radius:99em;background:#E2EEDF;color:#3D6A45}
+.ed-dl{display:flex;flex-direction:column;border-top:1px solid #ECE8E0}
+.ed-dl div{display:flex;justify-content:space-between;gap:1em;padding:.6em 0;border-bottom:1px solid #ECE8E0;font-size:.92em}
+.ed-dl dt{color:#958D82}
+.ed-dl dd{font-weight:500;color:#1D1A16;text-align:right}
+.ed-dl dd i{font-style:normal;font-family:var(--mono);font-size:.82em;color:#2D4A6B;background:#EEF1F5;padding:.1em .4em;border-radius:.3em;margin-left:.4em}
+.ed-two{display:grid;grid-template-columns:1fr 1fr;gap:.7em}
+.ed-two > div{background:#F7F6F2;border:1px solid #ECE8E0;border-radius:.6em;padding:.7em .8em}
+.gauge{display:flex;gap:.25em;margin:.45em 0 .3em}
+.gauge i{flex:1;height:.5em;border-radius:.15em;background:#E2DED6;transition:background .5s}
+.gauge i.on{background:#3E5A78}
+.ed-two span{font-size:.8em;color:#5E574E}
+.ed-two b{display:block;font-size:1.15em;margin:.3em 0 .1em}
+
+/* NadlanEast mock */
+.tilt{--rx:0deg;--ry:0deg;transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .8s var(--ease)}
+.js .visual .tilt{opacity:0;translate:0 40px;transition:transform .8s var(--ease),opacity 1.2s .25s var(--ease),translate 1.4s .25s var(--ease)}
+.js .visual.in .tilt{opacity:1;translate:0 0}
+.nd-wrap{position:relative;display:flex;justify-content:center}
+.phone{width:min(268px,52%);aspect-ratio:9/18.6;background:#0C0D10;border-radius:2.4em;padding:.55em;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 40px 80px -30px rgba(0,0,0,.7);container-type:inline-size}
+.ph-in{height:100%;border-radius:1.9em;overflow:hidden;background:#13202E;color:#F3EDE3;font-size:4.3cqw;font-family:Arial,'Arial Hebrew','Heebo',sans-serif;display:flex;flex-direction:column;padding:1.6em .9em .9em;gap:.8em;line-height:1.35}
+.nd-top{display:flex;justify-content:space-between;align-items:baseline}
+.nd-top b{font-family:var(--serif);font-weight:400;font-size:1.45em;color:#F6B865;letter-spacing:-.01em}
+.nd-top span{font-size:.72em;color:#9AA7B5;background:rgba(255,255,255,.07);padding:.3em .7em;border-radius:99em}
+.nd-stack{position:relative;flex:1}
+.nd-card{position:absolute;inset:0;border-radius:1.1em;background:#1C2B3B;box-shadow:0 1em 2em -1em rgba(0,0,0,.6)}
+.nd-card.b2{transform:translateY(-.9em) scale(.9);opacity:.45}
+.nd-card.b1{transform:translateY(-.45em) scale(.95);opacity:.75}
+.nd-card.f{overflow:hidden;display:flex;flex-direction:column;background:#F8F4EC;color:#1A2430;transform-origin:50% 120%}
+.js .visual.in .nd-card.f{animation:nudge 2.2s 1.6s var(--ease) both}
+@keyframes nudge{0%{transform:none}35%{transform:translateX(-14%) rotate(-7deg)}70%,100%{transform:none}}
+.nd-img{position:relative;flex:0 0 50%;background:linear-gradient(180deg,#F2C28B 0%,#E79A6A 45%,#A55E5A 100%);overflow:hidden}
+.nd-img svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:78%}
+.nd-match{position:absolute;top:.7em;right:.7em;font-style:normal;font-weight:700;font-size:.82em;background:#13202E;color:#F6B865;padding:.35em .7em;border-radius:99em}
+.nd-new{position:absolute;top:.7em;left:.7em;font-style:normal;font-size:.72em;background:rgba(255,255,255,.85);color:#7A3B1F;padding:.3em .65em;border-radius:99em}
+.nd-body{padding:.9em .95em 1em;display:flex;flex-direction:column;gap:.5em;flex:1}
+.nd-body b{font-size:1.25em}
+.nd-body > span{font-size:.92em;color:#5C6875}
+.nd-tags{display:flex;gap:.35em;flex-wrap:wrap}
+.nd-tags i{font-style:normal;font-size:.8em;background:#EDE6DA;color:#5A4A38;padding:.25em .6em;border-radius:99em}
+.nd-why{display:flex;gap:.8em;font-size:.8em;color:#3D6A45}
+.nd-why b{font-size:1em;margin-left:.25em}
+.nd-ai{margin-top:auto;font-size:.86em;background:#FFF3E2;color:#6A4416;border-radius:.6em;padding:.5em .6em;line-height:1.4}
+.nd-ai small{display:block;font-weight:700;margin-bottom:.15em}
+.nd-actions{display:flex;justify-content:center;gap:1.1em}
+.nd-actions span{width:2.9em;height:2.9em;border-radius:50%;display:grid;place-items:center;background:#1C2B3B;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.nd-actions span.big{width:3.4em;height:3.4em;background:#F6B865;color:#13202E}
+.nd-actions svg{width:45%;height:45%}
+.nd-float{position:absolute;left:-14px;top:14%;background:#F8F4EC;color:#1A2430;border-radius:12px;padding:12px 14px;width:156px;box-shadow:0 24px 50px -24px rgba(0,0,0,.7);font-size:12.5px;line-height:1.35;font-family:var(--sans)}
+.nd-float small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:#A0612A;margin-bottom:4px}
+.nd-float b{display:block;font-weight:600;font-size:13px}
+.nd-float span{color:#6A7480}
+.nd-float.two{left:auto;right:-14px;top:56%}
+.js .visual .nd-float{opacity:0;transform:translateY(16px);transition:opacity .9s 1.1s var(--ease),transform 1.1s 1.1s var(--ease)}
+.js .visual.in .nd-float{opacity:1;transform:none}
+.js .visual .nd-float.two{transition-delay:1.5s}
+
 /* more projects */
 .more{margin-top:clamp(120px,15vw,200px)}
 .more-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:30px}
@@ -445,6 +527,11 @@ ul,ol{list-style:none}
   .am-chat .bub:nth-of-type(1){display:none}
   .sp-grid{grid-template-columns:minmax(0,1fr)}
   .sp-card:nth-child(3){display:none}
+  .ed{grid-template-columns:minmax(0,1fr)}
+  .ed-q{border-right:0;border-bottom:1px solid #E9E5DC}
+  .ed-eval{display:none}
+  .phone{width:66%}
+  .nd-float{display:none}
   .win-bar span{padding-right:0}
   .specs div{grid-template-columns:minmax(0,1fr);gap:4px}
   .dl dd{font-size:14px}
@@ -508,7 +595,7 @@ ul,ol{list-style:none}
     </div>
     <div class="facts fade" style="animation-delay:.55s">
       <div class="fact"><span class="mono">Studying</span><p>B.Sc. Computer Science and Mathematics, Tel Aviv University</p></div>
-      <div class="fact"><span class="mono">Latest project</span><p>StudyOS, a study command center for exam season</p></div>
+      <div class="fact"><span class="mono">Latest project</span><p>ExamDNA, an AI system that maps the DNA of exam questions</p></div>
       <div class="fact"><span class="mono">Open to</span><p>Student positions, internships and freelance projects</p></div>
       <div class="cue mono"><i></i>Scroll</div>
     </div>
@@ -525,14 +612,107 @@ ul,ol{list-style:none}
 <section class="sec" id="work">
   <div class="wrap">
     <div class="sec-head">
-      <div data-r><span class="sec-num mono">01</span><h2>Selected <em>work</em><sup>(03)</sup></h2></div>
-      <p data-r style="--d:.1s">Three recent projects, each taken from the first idea to working software. Smaller tools, studies and experiments are listed further down.</p>
+      <div data-r><span class="sec-num mono">01</span><h2>Selected <em>work</em><sup>(05)</sup></h2></div>
+      <p data-r style="--d:.1s">Five recent projects, each taken from the first idea to working software. Smaller tools, coursework and experiments are listed further down.</p>
     </div>
 
     <div class="feats">
       <article class="feat">
         <div class="feat-text">
-          <div class="feat-meta mono" data-r><b>01</b><span>2026</span><span>Web app, AI</span></div>
+          <div class="feat-meta mono" data-r><b>01</b><span>2026</span><span>Machine learning, AI</span></div>
+          <h3 data-r>ExamDNA</h3>
+          <p class="one" data-r>Reads a university exam question and maps its DNA.</p>
+          <p class="desc" data-r>Paste a question from the Logic course and ExamDNA returns a structured analysis: the topic, the skill the question really tests, its question family, the kind of answer it asks for and a difficulty score, each with a confidence level. A language model proposes the classification, then a strict pipeline checks it against a course vocabulary of 64 topics, 36 skills and 22 question families, repairs only what is safe to repair, and sends uncertain results to human review. Every prompt change is scored against a hand labeled gold set, so progress is measured instead of guessed.</p>
+          <dl class="specs" data-r>
+            <div><dt>Built with</dt><dd>Python, Pydantic, Claude API, FastAPI, YAML domain packs, pytest, mypy</dd></div>
+            <div><dt>Inside</dt><dd>Question DNA schema, domain validation and safe repair, review routing, evaluation pipeline, 547 tests</dd></div>
+            <div><dt>Baseline</dt><dd>Topic 79%, difficulty within one level 96%, question type 100% on the 24 question gold set</dd></div>
+          </dl>
+          <div class="feat-links" data-r><span class="note mono">Private repository, happy to walk you through it</span></div>
+        </div>
+        <div class="visual tone-slate" data-r>
+          <div class="win-par" data-speed="0.05">
+            <div class="win" aria-hidden="true">
+              <div class="win-bar"><i></i><i></i><i></i><span>127.0.0.1:8000</span></div>
+              <div class="win-in ed">
+                <div class="ed-q">
+                  <small>Exam question</small>
+                  <p dir="rtl" lang="he">העבירו את הנוסחה <span class="ed-f">¬∃x(P(x) ∧ ∀y R(x,y))</span> לצורה נורמלית פרנקסית, ונמקו כל שלב במעבר.</p>
+                  <div class="ed-meta"><span>Logic pack v0.1</span><span>Hebrew</span></div>
+                  <em class="ed-btn">Analyze question</em>
+                  <div class="ed-eval"><small>Gold set baseline</small>
+                    <div class="ed-row"><span>Topic</span><div class="mbar"><i style="--w:79%"></i></div><b>79%</b></div>
+                    <div class="ed-row"><span>Difficulty ±1</span><div class="mbar"><i style="--w:96%"></i></div><b>96%</b></div>
+                    <div class="ed-row"><span>Question type</span><div class="mbar"><i style="--w:100%"></i></div><b>100%</b></div>
+                  </div>
+                </div>
+                <div class="ed-dna">
+                  <div class="ed-h"><b>Question DNA</b><em>Accepted</em></div>
+                  <dl class="ed-dl">
+                    <div><dt>Topic</dt><dd>Prenex normal form</dd></div>
+                    <div><dt>Skill</dt><dd>Formula transformation</dd></div>
+                    <div><dt>Family</dt><dd>Apply a transformation algorithm</dd></div>
+                    <div><dt>Asks for</dt><dd>A computation <i>transform</i></dd></div>
+                  </dl>
+                  <div class="ed-two">
+                    <div><small>Difficulty</small><div class="gauge"><i class="on"></i><i data-later="on"></i><i></i><i></i><i></i></div><span>2 of 5</span></div>
+                    <div><small>Confidence</small><b>High</b><span>No review needed</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feat">
+        <div class="feat-text">
+          <div class="feat-meta mono" data-r><b>02</b><span>2026</span><span>Full stack product</span></div>
+          <h3 data-r>NadlanEast</h3>
+          <p class="one" data-r>Looking for an apartment, but it works like a dating app.</p>
+          <p class="desc" data-r>A Hebrew real estate app that connects buyers, private sellers and realtors. Buyers set a budget, areas and must haves, then swipe through listings while a match score ranks every property: an AI match runs on the server with Gemini, and a built in scoring algorithm takes over if the AI is unavailable. Realtors are verified by license, sellers can boost listings, and there are chats, listing alerts, paid plans and an admin panel. The latest version is built for a pilot with real users and real listings, with hardened database permissions and strict security headers.</p>
+          <dl class="specs" data-r>
+            <div><dt>Built with</dt><dd>React, Vite, Supabase (Postgres, Auth, Storage), Stripe, Gemini API, Vercel serverless, Framer Motion</dd></div>
+            <div><dt>Inside</dt><dd>Swipe matching, AI match scores, realtor license checks, six Stripe plans, chat, alerts, row level security</dd></div>
+          </dl>
+          <div class="feat-links" data-r><span class="note mono">Private repository, happy to walk you through it</span></div>
+        </div>
+        <div class="visual tone-navy" data-r>
+          <div class="win-par" data-speed="0.05">
+            <div class="nd-wrap tilt" aria-hidden="true">
+              <div class="phone">
+                <div class="ph-in" dir="rtl" lang="he">
+                  <div class="nd-top"><b>NadlanEast</b><span>קנייה · גוש דן</span></div>
+                  <div class="nd-stack">
+                    <div class="nd-card b2"></div><div class="nd-card b1"></div>
+                    <div class="nd-card f">
+                      <div class="nd-img"><svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="150" cy="30" r="14" fill="#FFE2B0" opacity=".9"/><g fill="#7C3F44" opacity=".55"><rect x="0" y="58" width="34" height="62"/><rect x="150" y="50" width="50" height="70"/></g><g fill="#5A2E3A"><rect x="30" y="34" width="46" height="86"/><rect x="86" y="18" width="52" height="102"/><rect x="140" y="64" width="40" height="56"/></g><g fill="#FFD9A0" opacity=".85"><rect x="38" y="44" width="8" height="8"/><rect x="58" y="44" width="8" height="8"/><rect x="38" y="62" width="8" height="8"/><rect x="58" y="80" width="8" height="8"/><rect x="96" y="30" width="9" height="9"/><rect x="118" y="30" width="9" height="9"/><rect x="96" y="50" width="9" height="9"/><rect x="118" y="70" width="9" height="9"/><rect x="96" y="90" width="9" height="9"/><rect x="150" y="76" width="7" height="7"/><rect x="164" y="90" width="7" height="7"/></g><rect x="0" y="112" width="200" height="8" fill="#3D2230"/></svg><em class="nd-match">92% התאמה</em><em class="nd-new">חדש</em></div>
+                      <div class="nd-body">
+                        <b>4 חדרים עם מרפסת</b>
+                        <span>פתח תקווה · ₪2,650,000</span>
+                        <div class="nd-tags"><i>98 מ״ר</i><i>קומה 5</i><i>חניה</i></div>
+                        <div class="nd-why"><span><b>✓</b>תקציב</span><span><b>✓</b>אזור</span><span><b>✓</b>מרפסת</span></div>
+                        <p class="nd-ai"><small>למה זה מתאים לך</small>בתוך התקציב, באזור שבחרת ויש מרפסת כמו שביקשת.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="nd-actions">
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="#9AA7B5" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></span>
+                    <span class="big"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.6-9.4-9.3C1.2 8.2 3.4 4.5 7 4.5c2 0 3.6 1.1 5 2.9 1.4-1.8 3-2.9 5-2.9 3.6 0 5.8 3.7 4.4 7.2C19.5 16.4 12 21 12 21z"/></svg></span>
+                    <span><svg viewBox="0 0 24 24" fill="#F6B865"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg></span>
+                  </div>
+                </div>
+              </div>
+              <div class="nd-float"><small>AI match</small><b>Scored against your budget, areas and must haves</b></div>
+              <div class="nd-float two"><small>For realtors</small><b>3 buyers match this listing</b><span>Hot leads, ranked by match</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="feat">
+        <div class="feat-text">
+          <div class="feat-meta mono" data-r><b>03</b><span>2026</span><span>Web app, AI</span></div>
           <h3 data-r>StudyOS</h3>
           <p class="one" data-r>A calm study command center for exam season.</p>
           <p class="desc" data-r>Courses, PDFs, notes, tasks, practice exams and weak points all live in one place. The dashboard looks at your nearest exam and at what you still don't understand, and tells you what to study next. Any topic you mark as unclear gets an <em>Explain it to me</em> button that asks Claude for a simple explanation, in Hebrew or in English.</p>
@@ -578,7 +758,7 @@ ul,ol{list-style:none}
 
       <article class="feat">
         <div class="feat-text">
-          <div class="feat-meta mono" data-r><b>02</b><span>2026</span><span>AI product</span></div>
+          <div class="feat-meta mono" data-r><b>04</b><span>2026</span><span>AI product</span></div>
           <h3 data-r>AlgoMentor AI</h3>
           <p class="one" data-r>A coding interview coach that won't just hand you the answer.</p>
           <p class="desc" data-r>You pick one of ten original algorithm problems and an AI interviewer asks for your approach before you write a single line. It pushes back with follow up questions, gives hints one step at a time (each hint costs points, like in a real interview), and ends with a scorecard on correctness, complexity and communication, plus the problem you should try next.</p>
@@ -627,7 +807,7 @@ ul,ol{list-style:none}
 
       <article class="feat">
         <div class="feat-text">
-          <div class="feat-meta mono" data-r><b>03</b><span>2026</span><span>Full stack platform</span></div>
+          <div class="feat-meta mono" data-r><b>05</b><span>2026</span><span>Full stack platform</span></div>
           <h3 data-r>SkillProof</h3>
           <p class="one" data-r>Proof of skill that an employer can actually open and read.</p>
           <p class="desc" data-r>Junior developers pick realistic GitHub missions, like repairing a slow dashboard or hardening a login form, and submit a pull request as proof. Every mission comes with a branch, deliverables and acceptance criteria, and every submission is tracked in a portfolio style workspace. The accounts are real too: hashed passwords and HttpOnly cookie sessions.</p>
@@ -674,7 +854,7 @@ ul,ol{list-style:none}
 
     <div class="more" id="projects">
       <div class="more-head">
-        <h3 data-r>More projects<sup>(08)</sup></h3>
+        <h3 data-r>More projects<sup>(09)</sup></h3>
         <div class="filters" role="group" aria-label="Filter projects" data-r>
           <button class="on" data-f="all" aria-pressed="true">All</button>
           <button data-f="ai" aria-pressed="false">AI</button>
@@ -682,12 +862,13 @@ ul,ol{list-style:none}
           <button data-f="ml" aria-pressed="false">Machine learning</button>
           <button data-f="auto" aria-pressed="false">Automation</button>
           <button data-f="web" aria-pressed="false">Web</button>
+          <button data-f="uni" aria-pressed="false">University</button>
         </div>
       </div>
       <ul class="rows">
         <li class="row" data-cat="security" data-art="radar" data-bg="#1F2620" data-fg="#CFE0C9" data-stack="Python · Nmap · JSON reports">
           <a class="row-in" data-r href="https://github.com/agamalonn/pathfinder-scanner" target="_blank" rel="noopener">
-            <span class="r-n">04</span><span class="r-t">Pathfinder Scanner</span>
+            <span class="r-n">06</span><span class="r-t">Pathfinder Scanner</span>
             <span class="r-d">Maps the services a network exposes and turns them into a structured attack surface report, as a starting point for CVE research.</span>
             <span class="r-k">Security</span><span class="r-y">2026</span>
             <span class="r-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
@@ -695,23 +876,38 @@ ul,ol{list-style:none}
         </li>
         <li class="row" data-cat="security web" data-art="audit" data-bg="#2A1A1E" data-fg="#EBCAD0" data-stack="DevTools · Python · HTTP analysis">
           <a class="row-in" data-r href="https://github.com/agamalonn/Web-Security-Analysis-Case-Study" target="_blank" rel="noopener">
-            <span class="r-n">05</span><span class="r-t">Web Security Case Study</span>
+            <span class="r-n">07</span><span class="r-t">Web Security Case Study</span>
             <span class="r-d">An anonymized review of a live social platform. Found an endpoint that skipped authentication, confirmed uploaded photos lose their GPS data, and wrote it all up responsibly.</span>
             <span class="r-k">Security</span><span class="r-y">2026</span>
             <span class="r-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           </a>
         </li>
+        <li class="row" data-cat="ml" data-art="chart" data-bg="#1E2430" data-fg="#CFD8E6" data-stack="Python · scikit-learn · pandas · PostgreSQL">
+          <div class="row-in" data-r>
+            <span class="r-n">08</span><span class="r-t">CreditLens</span>
+            <span class="r-d">Credit risk model monitoring on synthetic loan data: a calibrated logistic baseline against a gradient boosting challenger, out of time validation, drift tracking, per application explanations and a model card.</span>
+            <span class="r-k">Machine learning</span><span class="r-y">2026</span><span class="r-a"></span>
+          </div>
+        </li>
         <li class="row" data-cat="ml" data-art="rings" data-bg="#E6E0D2" data-fg="#2B2722" data-stack="Python · scikit-learn · NumPy · Matplotlib">
           <a class="row-in" data-r href="https://github.com/agamalonn/svm-kernel-comparison" target="_blank" rel="noopener">
-            <span class="r-n">06</span><span class="r-t">SVM Kernel Comparison</span>
+            <span class="r-n">09</span><span class="r-t">SVM Kernel Comparison</span>
             <span class="r-d">Linear, polynomial and RBF kernels against concentric rings, with decision boundary plots and a look at what label noise does to each one.</span>
             <span class="r-k">Machine learning</span><span class="r-y">2026</span>
             <span class="r-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           </a>
         </li>
+        <li class="row" data-cat="uni ml" data-art="matrix" data-bg="#E4DCCB" data-fg="#3B2C1E" data-stack="C · Python C API · NumPy">
+          <a class="row-in" data-r href="https://github.com/agamalonn/symnmf-clustering" target="_blank" rel="noopener">
+            <span class="r-n">10</span><span class="r-t">SymNMF Clustering</span>
+            <span class="r-d">A pair project from the Software Project course. Symmetric non negative matrix factorization for clustering: the math runs in C, Python drives it through the C API, and the results are compared to k means with silhouette scores.</span>
+            <span class="r-k">University</span><span class="r-y">2026</span>
+            <span class="r-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          </a>
+        </li>
         <li class="row" data-cat="auto" data-art="flow" data-bg="#C9D0BC" data-fg="#223026" data-stack="Python · gTTS · pyperclip">
           <a class="row-in" data-r href="https://github.com/agamalonn/translator-app" target="_blank" rel="noopener">
-            <span class="r-n">07</span><span class="r-t">Clipboard Translator</span>
+            <span class="r-n">11</span><span class="r-t">Clipboard Translator</span>
             <span class="r-d">Copy any English word on the Mac and get its Hebrew translation as a notification, read out loud and saved for later practice.</span>
             <span class="r-k">Automation</span><span class="r-y">2026</span>
             <span class="r-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
@@ -719,29 +915,22 @@ ul,ol{list-style:none}
         </li>
         <li class="row" data-cat="ai" data-art="chat" data-bg="#DCCDC2" data-fg="#3A2626" data-stack="Python · OpenAI API">
           <a class="row-in" data-r href="https://github.com/agamalonn/Mind_mirror.py" target="_blank" rel="noopener">
-            <span class="r-n">08</span><span class="r-t">MindMirror</span>
+            <span class="r-n">12</span><span class="r-t">MindMirror</span>
             <span class="r-d">A journaling companion built on GPT. Mostly a lesson in prompt design, and in deciding where an AI tool should stop.</span>
             <span class="r-k">AI</span><span class="r-y">2025</span>
             <span class="r-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
           </a>
         </li>
-        <li class="row" data-cat="web" data-art="browser" data-bg="#DFC8AF" data-fg="#3B2C1E" data-stack="TypeScript · Supabase · SQL · Vercel">
-          <div class="row-in" data-r>
-            <span class="r-n">09</span><span class="r-t">Real Estate Web App</span>
-            <span class="r-d">A full stack real estate app, from the SQL schema in Supabase to a production deploy on Vercel.</span>
-            <span class="r-k">Web</span><span class="r-y"></span><span class="r-a"></span>
-          </div>
-        </li>
         <li class="row" data-cat="auto" data-art="steps" data-bg="#22201C" data-fg="#E6DFD3" data-stack="Python · Playwright">
           <div class="row-in" data-r>
-            <span class="r-n">10</span><span class="r-t">Browser Automation</span>
+            <span class="r-n">13</span><span class="r-t">Browser Automation</span>
             <span class="r-d">Python scripts that drive real browser flows with Playwright and hold up against dynamic pages, slow loads and errors.</span>
             <span class="r-k">Automation</span><span class="r-y"></span><span class="r-a"></span>
           </div>
         </li>
         <li class="row" data-cat="fun" data-art="cards" data-bg="#EBD0D4" data-fg="#6B2737" data-stack="Python · tkinter · sound">
           <a class="row-in" data-r href="https://github.com/agamalonn/pink-flashcard-game" target="_blank" rel="noopener">
-            <span class="r-n">11</span><span class="r-t">Pink Flashcards</span>
+            <span class="r-n">14</span><span class="r-t">Pink Flashcards</span>
             <span class="r-d">An English vocabulary game with sound, Hebrew translations and live progress tracking. Very pink, on purpose.</span>
             <span class="r-k">Game</span><span class="r-y">2025</span>
             <span class="r-a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
@@ -985,7 +1174,8 @@ ul,ol{list-style:none}
 
   /* tilt on the product mockups */
   d.querySelectorAll('.visual').forEach(v => {
-    const w = v.querySelector('.win');
+    const w = v.querySelector('.win, .tilt');
+    if (!w) return;
     v.addEventListener('pointermove', e => {
       const r = v.getBoundingClientRect();
       const px = (e.clientX - r.left) / r.width - .5, py = (e.clientY - r.top) / r.height - .5;
@@ -1026,6 +1216,8 @@ ul,ol{list-style:none}
     chat: '<svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="24" y="14" width="104" height="28" rx="14"/><path d="M38 28h70" opacity=".5"/><rect x="72" y="50" width="104" height="28" rx="14" fill="currentColor" fill-opacity=".16"/><path d="M88 64h70" opacity=".6"/><rect x="24" y="86" width="78" height="24" rx="12"/><circle cx="46" cy="98" r="2" fill="currentColor"/><circle cx="56" cy="98" r="2" fill="currentColor"/><circle cx="66" cy="98" r="2" fill="currentColor"/></svg>',
     browser: '<svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="24" y="8" width="152" height="104" rx="6"/><path d="M24 24h152"/><g fill="currentColor" stroke="none" opacity=".18"><rect x="34" y="34" width="62" height="40" rx="3"/><rect x="104" y="34" width="62" height="40" rx="3"/></g><g stroke-linecap="round" opacity=".6"><path d="M34 84h44M34 94h30M104 84h44M104 94h30"/></g><path d="M58 50l8-7 8 7v12H58z" stroke-linejoin="round"/></svg>',
     steps: '<svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><g><circle cx="46" cy="26" r="8"/><path d="M42 26l3 3 5-6"/><path d="M64 26h90" opacity=".5"/></g><g><circle cx="46" cy="60" r="8"/><path d="M42 60l3 3 5-6"/><path d="M64 60h70" opacity=".5"/></g><g><circle cx="46" cy="94" r="8" stroke-dasharray="3 3"/><path d="M64 94h80" opacity=".3"/></g><path d="M150 76l12 30 4-12 12-4z" fill="currentColor" fill-opacity=".2"/></svg>',
+    chart: '<svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M40 104V12M40 104h132" opacity=".5"/><path d="M40 104L172 12" stroke-dasharray="3 4" opacity=".5"/><path d="M40 104C52 60 80 34 172 14" stroke-width="2"/><path d="M40 104C60 80 96 50 172 22" opacity=".55"/><g fill="currentColor" stroke="none"><circle cx="78" cy="46" r="3"/></g><path d="M120 92h44M120 84h30" opacity=".5"/></svg>',
+    matrix: (() => { let s = '<svg viewBox="0 0 200 120">'; const v = [.9,.8,.1,.15,.05,.85,.95,.2,.1,.1,.15,.1,.9,.8,.2,.1,.2,.85,.9,.1,.05,.1,.15,.1,.95]; for (let r = 0; r < 5; r++) for (let c = 0; c < 5; c++) s += '<rect x="' + (55 + c * 18.5) + '" y="' + (14 + r * 18.5) + '" width="16" height="16" rx="2" fill="currentColor" opacity="' + (0.08 + v[r * 5 + c] * .8).toFixed(2) + '"/>'; return s + '<path d="M150 14v92" stroke="currentColor" opacity=".35"/><text x="162" y="64" font-family="Georgia,serif" font-style="italic" font-size="16" fill="currentColor">HHᵀ</text></svg>'; })(),
     cards: '<svg viewBox="0 0 200 120" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="58" y="22" width="84" height="76" rx="8" transform="rotate(-10 100 60)" opacity=".4"/><rect x="58" y="22" width="84" height="76" rx="8" transform="rotate(6 100 60)" opacity=".6"/><rect x="58" y="22" width="84" height="76" rx="8" fill="currentColor" fill-opacity=".12"/><text x="100" y="58" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="17" fill="currentColor" stroke="none">curious</text><text x="100" y="80" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="currentColor" stroke="none" opacity=".7">סקרן</text></svg>'
   };
   d.querySelectorAll('.row[data-art]').forEach(r => {
